@@ -9,6 +9,7 @@ Plugin 'alampros/vim-styled-jsx'
 Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'lumiliet/vim-twig'
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
 Plugin 'peitalin/vim-jsx-typescript'
@@ -30,7 +31,7 @@ autocmd BufNewFile,BufRead *.py
   \ set autoindent |
   \ set fileformat=unix
 
-autocmd BufNewFile,BufRead .vimrc,*.js,*.html,*.css,*.sass,*.yml,*.scss,*.json,*.ts,*.tsx,*.jsx,*.php,*.theme,*.module
+autocmd BufNewFile,BufRead .vimrc,*.js,*.html,*.css,*.sass,*.yml,*.scss,*.json,*.ts,*.tsx,*.jsx,*.conf,*.php,*.theme,*.module
   \ set tabstop=2 |
   \ set softtabstop=2 |
   \ set shiftwidth=2 |
@@ -44,7 +45,7 @@ autocmd BufNewFile,BufRead *.go
   \ set shiftwidth=4 |
   \ set noexpandtab
 
-autocmd BufNewFile,BufRead *ts
+autocmd BufNewFile,BufRead *.ts
   \ set filetype=typescript
 
 autocmd BufNewFile,BufRead *.tsx
