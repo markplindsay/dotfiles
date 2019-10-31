@@ -13,12 +13,14 @@ Plugin 'lumiliet/vim-twig'
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
 Plugin 'peitalin/vim-jsx-typescript'
+Plugin 'prettier/vim-prettier'
 Plugin 'sickill/vim-monokai'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-commentary'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'w0rp/ale'
+Plugin 'warbear0129/vim-qtpl'
 " Plugins here ^^^
 call vundle#end()
 filetype plugin indent on
@@ -115,3 +117,12 @@ fun! TrimWhitespace()
     call winrestview(l:save)
 endfun
 nnoremap <silent> <leader>w :call TrimWhitespace()<CR>
+
+" https://github.com/prettier/vim-prettier
+" Installation w/ vundle:
+" https://gist.github.com/remarkablemark/23669b32afad86d32b1084f6abc4a9b5
+" when running at every change you may want to disable quickfix
+let g:prettier#quickfix_enabled = 0
+
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.yml,*.html PrettierAsync
