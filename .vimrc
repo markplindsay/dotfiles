@@ -33,7 +33,7 @@ autocmd BufNewFile,BufRead *.py
   \ set autoindent |
   \ set fileformat=unix
 
-autocmd BufNewFile,BufRead .vimrc,*.js,*.html,*.css,*.sass,*.yml,*.scss,*.json,*.ts,*.tsx,*.jsx,*.conf,*.php,*.theme,*.module
+autocmd BufNewFile,BufRead .vimrc,*.js,*.html,*.css,*.sass,*.yml,*.scss,*.json,*.ts,*.tsx,*.jsx,*.conf,*.php,*.theme,*.module,*.sh
   \ set tabstop=2 |
   \ set softtabstop=2 |
   \ set shiftwidth=2 |
@@ -88,6 +88,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden = 1
 let NERDTreeIgnore=['\.pyc$', '\~$'] " ignore files in NERDTree
+let NERDTreeWinSize=60
 
 " https://github.com/w0rp/ale
 nnoremap <silent> <leader>d :ALEDetail<CR>
