@@ -5,7 +5,6 @@ call plug#begin()
 Plug 'leafgarland/typescript-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Need to :call coc#util#install() after
 Plug 'peitalin/vim-jsx-typescript'
-Plug 'prettier/vim-prettier'
 Plug 'sickill/vim-monokai'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
@@ -151,10 +150,6 @@ fun! TrimWhitespace()
 endfun
 nnoremap <silent> <leader>w :call TrimWhitespace()<CR>
 
-" https://github.com/prettier/vim-prettier
-" Installation w/ vundle:
-" https://gist.github.com/remarkablemark/23669b32afad86d32b1084f6abc4a9b5
-" when running at every change you may want to disable quickfix
-let g:prettier#quickfix_enabled = 0
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.yml,*.html PrettierAsync
+" https://github.com/neoclide/coc-prettier
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.yml,*.html Prettier
