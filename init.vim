@@ -21,7 +21,7 @@ autocmd BufNewFile,BufRead *.py
   \ set autoindent |
   \ set fileformat=unix
 
-autocmd BufNewFile,BufRead .vimrc,*.js,*.html,*.css,*.sass,*.yml,*.scss,*.json,*.ts,*.tsx,*.jsx,*.conf,*.php,*.theme,*.module
+autocmd BufNewFile,BufRead .vimrc,*.js,*.html,*.css,*.sass,*.yml,*.scss,*.json,*.ts,*.tsx,*.jsx,*.conf,*.php,*.theme,*.module,*.twig
   \ set tabstop=2 |
   \ set softtabstop=2 |
   \ set shiftwidth=2 |
