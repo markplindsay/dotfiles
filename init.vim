@@ -51,6 +51,9 @@ autocmd BufNewFile,BufRead *.jsx
 autocmd BufNewFile,BufRead *.theme,*.module
   \ set filetype=php
 
+autocmd BufNewFile,BufRead *.twig
+  \ set filetype=html
+
 " Don't throw away buffers when switching out of them
 set hidden
 
