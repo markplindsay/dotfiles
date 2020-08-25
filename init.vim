@@ -5,6 +5,7 @@ call plug#begin()
 Plug 'leafgarland/typescript-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Need to :call coc#util#install() after
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'warbear0129/vim-qtpl'
 Plug 'sickill/vim-monokai'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
@@ -29,7 +30,7 @@ autocmd BufNewFile,BufRead .vimrc,*.js,*.html,*.css,*.sass,*.yml,*.scss,*.json,*
   \ set autoindent |
   \ set fileformat=unix
 
-autocmd BufNewFile,BufRead *.go
+autocmd BufNewFile,BufRead *.go,*.qtpl,*.graphql
   \ set tabstop=4 |
   \ set softtabstop=4 |
   \ set shiftwidth=4 |
