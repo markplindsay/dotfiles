@@ -22,7 +22,7 @@ autocmd BufNewFile,BufRead *.py
   \ set autoindent |
   \ set fileformat=unix
 
-autocmd BufNewFile,BufRead .vimrc,*.js,*.html,*.css,*.sass,*.yml,*.scss,*.json,*.ts,*.tsx,*.jsx,*.conf,*.php,*.theme,*.module
+autocmd BufNewFile,BufRead .vimrc,*.js,*.html,*.css,*.sass,*.yml,*.scss,*.json,*.ts,*.tsx,*.jsx,*.conf,*.php,*.theme,*.module,*.twig,*.inc
   \ set tabstop=2 |
   \ set softtabstop=2 |
   \ set shiftwidth=2 |
@@ -48,8 +48,11 @@ autocmd BufNewFile,BufRead *.js
 autocmd BufNewFile,BufRead *.jsx
   \ set filetype=javascript.jsx
 
-autocmd BufNewFile,BufRead *.theme,*.module
+autocmd BufNewFile,BufRead *.theme,*.module,*.inc
   \ set filetype=php
+
+autocmd BufNewFile,BufRead *.twig
+  \ set filetype=html
 
 " Don't throw away buffers when switching out of them
 set hidden
