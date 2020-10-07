@@ -4,7 +4,7 @@ call plug#begin()
 " Plugs here vvv
 Plug 'leafgarland/typescript-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Need to :call coc#util#install() after
-Plug 'peitalin/vim-jsx-typescript'
+" Plug 'peitalin/vim-jsx-typescript'
 Plug 'warbear0129/vim-qtpl'
 Plug 'sickill/vim-monokai'
 Plug 'scrooloose/nerdtree'
@@ -54,6 +54,9 @@ autocmd BufNewFile,BufRead *.theme,*.module,*.inc
 autocmd BufNewFile,BufRead *.twig
   \ set filetype=html
 
+autocmd BufNewFile,BufRead Jenkinsfile
+  \ set filetype=groovy
+
 " Don't throw away buffers when switching out of them
 set hidden
 
@@ -70,7 +73,7 @@ nnoremap <silent> <leader>bq :bp <BAR> bd #<CR>
 nnoremap <silent> <leader>bl :ls<CR>
 nnoremap <silent> <leader>q :BufOnly<CR>
 
-" https://github.com/neoclide/coc.nvim 
+" https://github.com/neoclide/coc.nvim
 set nobackup
 set nowritebackup
 set cmdheight=2
@@ -157,3 +160,5 @@ nnoremap <silent> <leader>w :call TrimWhitespace()<CR>
 " https://github.com/neoclide/coc-prettier
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.yml,*.html Prettier
+
+highlight link typescriptReserved Keyword
