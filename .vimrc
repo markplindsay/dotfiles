@@ -1,28 +1,27 @@
-" https://github.com/VundleVim/Vundle.vim
+" https://github.com/junegunn/vim-plug
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-" Plugins here vvv
-Plugin 'alampros/vim-styled-jsx'
-Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" Plugin 'HerringtonDarkholme/yats.vim'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'lumiliet/vim-twig'
-Plugin 'mxw/vim-jsx'
-Plugin 'pangloss/vim-javascript'
-Plugin 'peitalin/vim-jsx-typescript'
-Plugin 'prettier/vim-prettier'
-Plugin 'sickill/vim-monokai'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-commentary'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-scripts/BufOnly.vim'
-Plugin 'w0rp/ale'
-Plugin 'warbear0129/vim-qtpl'
-" Plugins here ^^^
-call vundle#end()
+call plug#begin()
+Plug 'VundleVim/Vundle.vim'
+" Plugs here vvv
+Plug 'alampros/vim-styled-jsx'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'HerringtonDarkholme/yats.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'lumiliet/vim-twig'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'prettier/vim-prettier'
+Plug 'sickill/vim-monokai'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-commentary'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-scripts/BufOnly.vim'
+Plug 'w0rp/ale'
+Plug 'warbear0129/vim-qtpl'
+" Plugs here ^^^
+call plug#end()
 filetype plugin indent on
 
 autocmd BufNewFile,BufRead *.py
