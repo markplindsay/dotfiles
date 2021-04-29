@@ -167,7 +167,7 @@ endfun
 nnoremap <silent> <leader>w :call TrimWhitespace()<CR>
 
 " https://github.com/neoclide/coc-prettier
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.yml,*.html Prettier
 
 " Stop obnoxiously highlighting reserved words in typescript.tsx

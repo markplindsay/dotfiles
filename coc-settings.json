@@ -1,13 +1,5 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": [
-    "css",
-    "go",
-    "javascript",
-    "json",
-    "scss",
-    "typescript",
-    "typescript.tsx"
-  ],
+  "coc.preferences.formatOnSaveFiletypes": ["go"],
   "diagnostic.checkCurrentLine": true,
   "coc.preferences.extensionUpdateCheck": "daily"
 }
