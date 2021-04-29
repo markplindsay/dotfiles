@@ -2,6 +2,8 @@
 set nocompatible
 call plug#begin()
 " Plugs here vvv
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 Plug 'leafgarland/typescript-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Need to :call coc#util#install() after
 " Plug 'peitalin/vim-jsx-typescript'
@@ -56,6 +58,13 @@ autocmd BufNewFile,BufRead *.twig
 
 autocmd BufNewFile,BufRead Jenkinsfile
   \ set filetype=groovy
+
+autocmd BufNewFile,BufRead *.md,*.mdx
+  \ set tabstop=2 |
+  \ set softtabstop=2 |
+  \ set shiftwidth=2 |
+  \ set expandtab |
+  \ set fileformat=unix
 
 " Don't throw away buffers when switching out of them
 set hidden
@@ -158,7 +167,12 @@ endfun
 nnoremap <silent> <leader>w :call TrimWhitespace()<CR>
 
 " https://github.com/neoclide/coc-prettier
-command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.yml,*.html Prettier
 
+" Stop obnoxiously highlighting reserved words in typescript.tsx
 highlight link typescriptReserved Keyword
+
+" https://github.com/plasticboy/vim-markdown
+let g:vim_markdown_folding_disabled = 1
+" let g:vim_markdown_fenced_languages = ['ts=typescript', 'tsx=typescript.tsx']
