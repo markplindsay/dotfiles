@@ -1,18 +1,17 @@
-" https://github.com/VundleVim/Vundle.vim
 set nocompatible
 call plug#begin()
 " Plugs here vvv
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'leafgarland/typescript-vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " Need to :call coc#util#install() after
-" Plug 'peitalin/vim-jsx-typescript'
 Plug 'warbear0129/vim-qtpl'
 Plug 'sickill/vim-monokai'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/BufOnly.vim'
+Plug 'fatih/vim-go'
+Plug 'neoclide/coc.nvim', {'do': 'npm ci'} " Need to :call coc#util#install() after
 " Plugs here ^^^
 call plug#end()
 
@@ -24,7 +23,7 @@ autocmd BufNewFile,BufRead *.py
   \ set autoindent |
   \ set fileformat=unix
 
-autocmd BufNewFile,BufRead .vimrc,*.js,*.html,*.css,*.sass,*.yml,*.scss,*.json,*.ts,*.tsx,*.jsx,*.conf,*.php,*.theme,*.module,*.twig,*.inc
+autocmd BufNewFile,BufRead .vimrc,*.js,*.html,*.css,*.sass,*.yml,*.scss,*.json,*.ts,*.tsx,*.jsx,*.conf,*.theme,*.module,*.twig,*.inc
   \ set tabstop=2 |
   \ set softtabstop=2 |
   \ set shiftwidth=2 |
@@ -32,7 +31,14 @@ autocmd BufNewFile,BufRead .vimrc,*.js,*.html,*.css,*.sass,*.yml,*.scss,*.json,*
   \ set autoindent |
   \ set fileformat=unix
 
-autocmd BufNewFile,BufRead *.go,*.qtpl,*.graphql
+autocmd BufNewFile,BufRead *.graphql,*.php
+  \ set tabstop=2 |
+  \ set softtabstop=2 |
+  \ set shiftwidth=2 |
+  \ set expandtab |
+  \ set fileformat=unix
+
+autocmd BufNewFile,BufRead *.go,*.qtpl
   \ set tabstop=4 |
   \ set softtabstop=4 |
   \ set shiftwidth=4 |
@@ -145,6 +151,9 @@ nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
 nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+" vim-go
+let g:go_def_mapping_enabled = 0
 
 " https://github.com/scrooloose/nerdtree
 autocmd StdinReadPre * let s:std_in=1
