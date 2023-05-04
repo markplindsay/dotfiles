@@ -1,6 +1,13 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["go", "python"],
-  "diagnostic.checkCurrentLine": true,
   "coc.preferences.extensionUpdateCheck": "daily",
+  "coc.preferences.formatOnSaveFiletypes": ["go", "python", "ts", "typescript", "css", "sass", "json"],
+  "diagnostic.checkCurrentLine": true,
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "filetypes": ["go"],
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"]
+    }
+  },
   "prettier.requireConfig": true
 }

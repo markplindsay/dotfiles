@@ -12,6 +12,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/BufOnly.vim'
 Plug 'fatih/vim-go'
 Plug 'neoclide/coc.nvim', {'do': 'npm ci'} " Need to :call coc#util#install() after
+Plug 'hashivim/vim-terraform'
 " Plugs here ^^^
 call plug#end()
 
@@ -165,7 +166,7 @@ let NERDTreeWinSize=33
 " https://github.com/vim-airline/vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#tab_nr_type = 2
 
 " https://vi.stackexchange.com/questions/454/whats-the-simplest-way-to-strip-trailing-whitespace-from-all-lines-in-a-file
 fun! TrimWhitespace()
@@ -185,3 +186,5 @@ highlight link typescriptReserved Keyword
 " https://github.com/plasticboy/vim-markdown
 let g:vim_markdown_folding_disabled = 1
 " let g:vim_markdown_fenced_languages = ['ts=typescript', 'tsx=typescript.tsx']
+
+set mouse=
