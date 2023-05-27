@@ -11,7 +11,7 @@ Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/BufOnly.vim'
 Plug 'fatih/vim-go'
-Plug 'neoclide/coc.nvim', {'do': 'npm ci'} " Need to :call coc#util#install() after
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'} " Need to :call coc#util#install() after
 " Plugs here ^^^
 call plug#end()
 
@@ -43,6 +43,20 @@ autocmd BufNewFile,BufRead *.go,*.qtpl
   \ set softtabstop=4 |
   \ set shiftwidth=4 |
   \ set noexpandtab
+
+autocmd BufNewFile,BufRead /var/www/slackdesign/*.php
+  \ set tabstop=2 |
+  \ set softtabstop=2 |
+  \ set shiftwidth=2 |
+  \ set expandtab |
+  \ set fileformat=unix
+
+autocmd BufNewFile,BufRead /var/www/slackdesign/*.less
+  \ set tabstop=2 |
+  \ set softtabstop=2 |
+  \ set shiftwidth=2 |
+  \ set expandtab |
+  \ set fileformat=unix
 
 autocmd BufNewFile,BufRead *.ts
   \ set filetype=typescript
