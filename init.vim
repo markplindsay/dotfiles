@@ -12,6 +12,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/BufOnly.vim'
 Plug 'fatih/vim-go'
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'} " Need to :call coc#util#install() after
+Plug 'hashivim/vim-terraform'
 " Plugs here ^^^
 call plug#end()
 
@@ -23,7 +24,7 @@ autocmd BufNewFile,BufRead *.py
   \ set autoindent |
   \ set fileformat=unix
 
-autocmd BufNewFile,BufRead .vimrc,*.js,*.html,*.css,*.sass,*.yml,*.scss,*.json,*.ts,*.tsx,*.jsx,*.conf,*.theme,*.module,*.twig,*.inc
+autocmd BufNewFile,BufRead .vimrc,*.js,*.html,*.css,*.sass,*.yml,*.scss,*.json,*.ts,*.tsx,*.jsx,*.conf,*.tf
   \ set tabstop=2 |
   \ set softtabstop=2 |
   \ set shiftwidth=2 |
@@ -31,7 +32,7 @@ autocmd BufNewFile,BufRead .vimrc,*.js,*.html,*.css,*.sass,*.yml,*.scss,*.json,*
   \ set autoindent |
   \ set fileformat=unix
 
-autocmd BufNewFile,BufRead *.graphql,*.php
+autocmd BufNewFile,BufRead *.graphql,*.php,*.theme,*.module,*.twig,*.inc
   \ set tabstop=2 |
   \ set softtabstop=2 |
   \ set shiftwidth=2 |
@@ -174,12 +175,12 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden = 1
 let NERDTreeIgnore=['\.pyc$', '\~$'] " ignore files in NERDTree
-let NERDTreeWinSize=60
+let NERDTreeWinSize=33
 
 " https://github.com/vim-airline/vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#tab_nr_type = 2
 
 " https://vi.stackexchange.com/questions/454/whats-the-simplest-way-to-strip-trailing-whitespace-from-all-lines-in-a-file
 fun! TrimWhitespace()
@@ -199,3 +200,5 @@ highlight link typescriptReserved Keyword
 " https://github.com/plasticboy/vim-markdown
 let g:vim_markdown_folding_disabled = 1
 " let g:vim_markdown_fenced_languages = ['ts=typescript', 'tsx=typescript.tsx']
+
+set mouse=
