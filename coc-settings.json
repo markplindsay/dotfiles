@@ -1,16 +1,19 @@
 {
   "coc.preferences.formatOnSave": true,
-  "[go][python][ts][typescript][css][sass][json]": {
-    "coc.preferences.formatOnSave": true
-  },
   "diagnostic.checkCurrentLine": true,
-  "languageserver": {
-    "golang": {
-      "command": "gopls",
-      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-      "filetypes": ["go"]
+  "prettier.requireConfig": true,
+  "ruff.autoFixOnSave": true,
+  "ruff.disableDocumentFormatting": true,
+  "diagnostic-languageserver.formatFiletypes": {
+    "python": ["black"]
+  },
+  "json.format.enable": true,
+  "diagnostic-languageserver.formatters": {
+    "black": {
+      "command": "black",
+      "args": ["-q", "-"]
     }
   },
-  "prettier.requireConfig": true,
-  "snippets.ultisnips.pythonPrompt": false
+  "mypy-type-checker.useDmypy": false,
+  "stylelintplus.autoFixOnSave": true
 }
