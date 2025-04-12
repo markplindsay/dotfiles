@@ -13,7 +13,7 @@ Plug 'vim-scripts/BufOnly.vim'
 Plug 'fatih/vim-go'
 " Plug 'lumiliet/vim-twig'
 Plug 'nelsyeung/twig.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'} " Need to :call coc#util#install() after
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'hashivim/vim-terraform'
 "Plug 'github/copilot.vim'
 " Plugs here ^^^
