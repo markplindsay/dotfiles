@@ -11,8 +11,11 @@ Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/BufOnly.vim'
 Plug 'fatih/vim-go'
+" Plug 'lumiliet/vim-twig'
+Plug 'nelsyeung/twig.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'} " Need to :call coc#util#install() after
 Plug 'hashivim/vim-terraform'
+"Plug 'github/copilot.vim'
 " Plugs here ^^^
 call plug#end()
 
@@ -73,9 +76,6 @@ autocmd BufNewFile,BufRead *.jsx
 
 autocmd BufNewFile,BufRead *.theme,*.module,*.inc
   \ set filetype=php
-
-autocmd BufNewFile,BufRead *.twig
-  \ set filetype=html
 
 autocmd BufNewFile,BufRead Jenkinsfile
   \ set filetype=groovy
