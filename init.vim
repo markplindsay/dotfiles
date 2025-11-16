@@ -11,8 +11,10 @@ Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/BufOnly.vim'
 Plug 'fatih/vim-go'
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'} " Need to :call coc#util#install() after
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'npm ci'} " Need to :call coc#util#install() after
 Plug 'hashivim/vim-terraform'
+Plug 'lumiliet/vim-twig'
+Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['php'] }
 " Plugs here ^^^
 call plug#end()
 
@@ -73,9 +75,6 @@ autocmd BufNewFile,BufRead *.jsx
 
 autocmd BufNewFile,BufRead *.theme,*.module,*.inc
   \ set filetype=php
-
-autocmd BufNewFile,BufRead *.twig
-  \ set filetype=html
 
 autocmd BufNewFile,BufRead Jenkinsfile
   \ set filetype=groovy
@@ -293,6 +292,8 @@ nnoremap <silent> <leader>w :call TrimWhitespace()<CR>
 " https://github.com/neoclide/coc-prettier
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.yml,*.html Prettier
+
+autocmd BufWritePre *.theme,*.module,*.inc,*.php PrettierAsync
 
 " Stop obnoxiously highlighting reserved words in typescript.tsx
 highlight link typescriptReserved Keyword

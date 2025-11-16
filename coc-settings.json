@@ -12,5 +12,5 @@
     }
   },
   "prettier.requireConfig": true,
-  "snippets.ultisnips.pythonPrompt": false
+  "intelephense.format.enable": false
 }
