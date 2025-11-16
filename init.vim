@@ -11,10 +11,13 @@ Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/BufOnly.vim'
 Plug 'fatih/vim-go'
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'npm ci'} " Need to :call coc#util#install() after
 Plug 'hashivim/vim-terraform'
-Plug 'lumiliet/vim-twig'
 Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['php'] }
+" Plug 'lumiliet/vim-twig'
+Plug 'nelsyeung/twig.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'hashivim/vim-terraform'
+"Plug 'github/copilot.vim'
 " Plugs here ^^^
 call plug#end()
 
@@ -26,7 +29,7 @@ autocmd BufNewFile,BufRead *.py
   \ set autoindent |
   \ set fileformat=unix
 
-autocmd BufNewFile,BufRead .vimrc,*.js,*.html,*.css,*.sass,*.yml,*.scss,*.json,*.ts,*.tsx,*.jsx,*.conf,*.tf
+autocmd BufNewFile,BufRead .vimrc,*.js,*.html,*.css,*.sass,*.yml,*.scss,*.json,*.ts,*.tsx,*.jsx,*.conf,*.tf,*.mjs
   \ set tabstop=2 |
   \ set softtabstop=2 |
   \ set shiftwidth=2 |
@@ -274,7 +277,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden = 1
 let NERDTreeIgnore=['\.pyc$', '\~$'] " ignore files in NERDTree
-let NERDTreeWinSize=33
+let NERDTreeWinSize=53
 
 " https://github.com/vim-airline/vim-airline
 let g:airline#extensions#tabline#enabled = 1
@@ -291,7 +294,7 @@ nnoremap <silent> <leader>w :call TrimWhitespace()<CR>
 
 " https://github.com/neoclide/coc-prettier
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.yml,*.html Prettier
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.yml,*.html,*.json Prettier
 
 autocmd BufWritePre *.theme,*.module,*.inc,*.php PrettierAsync
 
