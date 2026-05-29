@@ -16,5 +16,8 @@
   },
   "intelephense.format.enable": false,
   "stylelintplus.autoFixOnSave": true,
-  "eslint.autoFixOnSave": true
+  "eslint.autoFixOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
