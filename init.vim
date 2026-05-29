@@ -12,12 +12,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/BufOnly.vim'
 Plug 'fatih/vim-go'
 Plug 'hashivim/vim-terraform'
-Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['php'] }
+" Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['php'] }
 " Plug 'lumiliet/vim-twig'
 Plug 'nelsyeung/twig.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'hashivim/vim-terraform'
-"Plug 'github/copilot.vim'
+Plug 'github/copilot.vim'
 " Plugs here ^^^
 call plug#end()
 
@@ -37,7 +37,7 @@ autocmd BufNewFile,BufRead .vimrc,*.js,*.html,*.css,*.sass,*.yml,*.scss,*.json,*
   \ set autoindent |
   \ set fileformat=unix
 
-autocmd BufNewFile,BufRead *.graphql,*.php,*.theme,*.module,*.twig,*.inc
+autocmd BufNewFile,BufRead *.graphql,*.php,*.theme,*.module,*.twig,*.inc,*.install
   \ set tabstop=2 |
   \ set softtabstop=2 |
   \ set shiftwidth=2 |
@@ -76,7 +76,7 @@ autocmd BufNewFile,BufRead *.js
 autocmd BufNewFile,BufRead *.jsx
   \ set filetype=javascript.jsx
 
-autocmd BufNewFile,BufRead *.theme,*.module,*.inc
+autocmd BufNewFile,BufRead *.theme,*.module,*.inc,*.install
   \ set filetype=php
 
 autocmd BufNewFile,BufRead Jenkinsfile
@@ -211,6 +211,12 @@ nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
 " Run the Code Lens action on the current line
 nmap <leader>cl  <Plug>(coc-codelens-action)
 
+" Jump to next and previous errors
+try
+   nmap <silent> <leader>j :call CocAction('diagnosticNext')<cr>
+   nmap <silent> <leader>k :call CocAction('diagnosticPrevious')<cr>
+endtry
+
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server
 xmap if <Plug>(coc-funcobj-i)
@@ -295,8 +301,7 @@ nnoremap <silent> <leader>w :call TrimWhitespace()<CR>
 " https://github.com/neoclide/coc-prettier
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.yml,*.html,*.json Prettier
-
-autocmd BufWritePre *.theme,*.module,*.inc,*.php PrettierAsync
+autocmd BufWritePre *.theme,*.module,*.inc,*.install,*.php Prettier
 
 " Stop obnoxiously highlighting reserved words in typescript.tsx
 highlight link typescriptReserved Keyword
