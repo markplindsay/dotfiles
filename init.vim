@@ -4,20 +4,20 @@ call plug#begin()
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'leafgarland/typescript-vim'
-Plug 'warbear0129/vim-qtpl'
+" Plug 'warbear0129/vim-qtpl'
 Plug 'sickill/vim-monokai'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/BufOnly.vim'
-Plug 'fatih/vim-go'
-Plug 'hashivim/vim-terraform'
-" Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['php'] }
-" Plug 'lumiliet/vim-twig'
+" Plug 'fatih/vim-go'
+" Plug 'hashivim/vim-terraform'
+Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['php'] }
+Plug 'lumiliet/vim-twig'
 Plug 'nelsyeung/twig.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'hashivim/vim-terraform'
-Plug 'github/copilot.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'npm ci'}
+" Plug 'hashivim/vim-terraform'
+" Plug 'github/copilot.vim'
 " Plugs here ^^^
 call plug#end()
 
